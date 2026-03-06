@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>ClosetMatch</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f4f4;
+margin:0;
+}
+
+/* HEADER */
+
+header{
+background:#ff6fa5;
+color:white;
+padding:20px;
+text-align:center;
+font-size:28px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.container{
+display:flex;
+height:80vh;
+}
+
+/* CLOSET IZQUIERDA */
+
+.closet{
+width:50%;
+background:white;
+padding:20px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+overflow:auto;
+}
+
+.item{
+background:#fafafa;
+padding:10px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.item img{
+width:100%;
+height:150px;
+object-fit:contain;
+}
+
+/* MODELO DERECHA */
+
+.modelo{
+width:50%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+
+.modelo img{
+width:300px;
+}
+
+/* BOTON */
+
+button{
+margin-top:20px;
+padding:14px 25px;
+background:#ff6fa5;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+}
+
+#outfit{
+margin-top:20px;
+font-size:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>ClosetMatch 👗</header>
+
+<div class="container">
+
+<!-- LADO IZQUIERDO CLOSET -->
+
+<div class="closet">
+
+<div class="item">
+<img src="imagenes/Top1.png">
+<p>Top</p>
+</div>
+
+<div class="item">
+<img src="imagenes/Top2.png">
+<p>Blusa</p>
+</div>
+
+<div class="item">
+<img src="imagenes/Pantalon.png">
+<p>Pantalón</p>
+</div>
+
+<div class="item">
+<img src="imagenes/Vestido.png">
+<p>Vestido</p>
+</div>
+
+<div class="item">
+<img src="imagenes/Zapatos.png">
+<p>Zapatos</p>
+</div>
+
+</div>
+
+<!-- LADO DERECHO MODELO -->
+
+<div class="modelo">
+
+<img src="imagenes/modelo.png">
+
+<button onclick="generarOutfit()">Generar Outfit</button>
+
+<p id="outfit"></p>
+
+</div>
+
+</div>
+
+<script>
+
+function generarOutfit(){
+
+const outfits = [
+
+"Top + Pantalón + Zapatos",
+
+"Vestido + Zapatos",
+
+"Blusa + Jeans + Zapatos",
+
+"Top + Falda + Zapatos"
+
+]
+
+let random = Math.floor(Math.random()*outfits.length)
+
+document.getElementById("outfit").innerText =
+"Outfit sugerido: " + outfits[random]
+
+}
+
+</script>
+
+</body>
+</html>
